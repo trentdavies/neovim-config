@@ -5,7 +5,17 @@
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- custom mappings
 vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = 'Quit window' })
+vim.keymap.set('n', '<leader>t', ':tabnew<CR>', { desc = 'New [T]ab' })
+vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'New [V]ertical Window' })
+vim.keymap.set('n', '<leader>wh', ':split<CR>', { desc = 'New [H]oriz Window' })
+
+vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
+vim.keymap.set('i', 'jk', '<Esc>', { silent = true })
+vim.keymap.set('c', 'jj', '<C-c>', { silent = true })
+vim.keymap.set('c', 'jk', '<C-c>', { silent = true })
+
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
