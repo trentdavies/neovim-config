@@ -4,12 +4,17 @@
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- get out of terminal mode
+vim.keymap.set('t', '<Esc><Esc>', [[<Ctrl-\><Ctrl-N>]], { silent = true })
 
 -- custom mappings
 vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = 'Quit window' })
 vim.keymap.set('n', '<leader>t', ':tabnew<CR>', { desc = 'New [T]ab' })
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'New [V]ertical Window' })
 vim.keymap.set('n', '<leader>wh', ':split<CR>', { desc = 'New [H]oriz Window' })
+
+vim.keymap.set('n', '<S-C-l>', 'gt', { desc = 'go to next tab' })
+vim.keymap.set('n', '<S-C-h>', 'gT', { desc = 'go to prev tab' })
 
 vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
 vim.keymap.set('i', 'jk', '<Esc>', { silent = true })
@@ -41,6 +46,12 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- resize windows
+vim.keymap.set('n', '<A-h>', '<C-w><')
+vim.keymap.set('n', '<A-l>', '<C-w>>')
+vim.keymap.set('n', '<A-k>', '<C-w>+')
+vim.keymap.set('n', '<A-j>', '<C-w>-')
+--
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

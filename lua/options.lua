@@ -68,4 +68,13 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- swap ',' with 'm' for the fF/tT left-right motion commands.
+vim.keymap.set({ 'n', 'x', 'o' }, 'm', ',', { noremap = true })
+-- Soft wrap
+-- vim.opt.wrap = true
+-- vim.opt.linebreak = true
+-- vim.opt.breakindent = true
+-- vim.opt.showbreak = "↳ "
+-- vim.opt.whichwrap:append("<,>,[,],h,l")
+
 -- vim: ts=2 sts=2 sw=2 et
