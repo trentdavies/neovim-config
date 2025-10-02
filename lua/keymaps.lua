@@ -1,11 +1,7 @@
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
-
--- Clear highlights on search when pressing <Esc> in normal mode
---  See `:help hlsearch`
+-- Clear highlights on search
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- get out of terminal mode
-vim.keymap.set('t', '<Esc><Esc>', [[<Ctrl-\><Ctrl-N>]], { silent = true })
+vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-N>]], { silent = true })
 
 -- custom mappings
 vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = 'Quit window' })
