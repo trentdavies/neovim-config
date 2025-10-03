@@ -1,8 +1,5 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-vim.g.have_nerd_font = true
 require 'core.options'
-require 'keymaps'
+require 'core.keymaps'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
