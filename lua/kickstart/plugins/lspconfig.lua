@@ -208,33 +208,73 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
-
         lua_ls = {
-          -- cmd = { ... },
-          -- filetypes = { ... },
-          -- capabilities = {},
           settings = {
             Lua = {
               completion = {
                 callSnippet = 'Replace',
               },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              runtime = { version = 'LuaJIT' },
+              workspace = {
+                checkThirdParty = false,
+                library = vim.api.nvim_get_runtime_file('', true),
+              },
+              diagnostics = {
+                globals = { 'vim' },
+                disable = { 'missing-fields' },
+              },
+              format = {
+                enable = false,
+              },
             },
           },
         },
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pyflakes = { enabled = false },
+                pycodestyle = { enabled = false },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+                mccabe = { enabled = false },
+                pylsp_mypy = { enabled = false },
+                pylsp_black = { enabled = false },
+                pylsp_isort = { enabled = false },
+              },
+            },
+          },
+        },
+        -- basedpyright = {
+        --   -- Config options: https://github.com/DetachHead/basedpyright/blob/main/docs/settings.md
+        --   settings = {
+        --     basedpyright = {
+        --       disableOrganizeImports = true, -- Using Ruff's import organizer
+        --       disableLanguageServices = false,
+        --       analysis = {
+        --         ignore = { '*' },                 -- Ignore all files for analysis to exclusively use Ruff for linting
+        --         typeCheckingMode = 'off',
+        --         diagnosticMode = 'openFilesOnly', -- Only analyze open files
+        --         useLibraryCodeForTypes = true,
+        --         autoImportCompletions = true,     -- whether pyright offers auto-import completions
+        --       },
+        --     },
+        --   },
+        -- },
+        ruff = {},
+        jsonls = {},
+        sqlls = {},
+        terraformls = {},
+        yamlls = {},
+        bashls = {},
+        dockerls = {},
+        docker_compose_language_service = {},
+        -- tailwindcss = {},
+        -- graphql = {},
+        html = { filetypes = { 'html', 'twig', 'hbs' } },
+        -- cssls = {},
+        -- ltex = {},
+        -- texlab = {},
       }
 
       -- Ensure the servers and tools above are installed
