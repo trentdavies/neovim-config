@@ -9,7 +9,7 @@ local opts = { noremap = true, silent = true }
 -- Clear highlights on search
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', opts)
 -- get out of terminal mode
-vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-N>]], { silent = true })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-N>]], { silent = true })
 
 -- windows
 vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = 'Quit window' })
