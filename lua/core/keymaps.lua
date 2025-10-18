@@ -10,6 +10,13 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', opts)
 -- get out of terminal mode
 vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-N>]], { silent = true })
+vim.keymap.set('t', 'jj', [[<C-\><C-N>]], { silent = true })
+vim.keymap.set('t', 'jk', [[<C-\><C-N>]], { silent = true })
+-- esc out of insert and command mode
+vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
+vim.keymap.set('i', 'jk', '<Esc>', { silent = true })
+vim.keymap.set('c', 'jj', '<C-c>', { silent = true })
+vim.keymap.set('c', 'jk', '<C-c>', { silent = true })
 
 -- windows
 vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = 'Quit window' })
@@ -19,11 +26,6 @@ vim.keymap.set('n', '<leader>h', ':split<CR>', { desc = 'New [H]oriz Window' })
 
 vim.keymap.set('n', '<S-C-l>', 'gt', { desc = 'go to next tab' })
 vim.keymap.set('n', '<S-C-h>', 'gT', { desc = 'go to prev tab' })
-
-vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
-vim.keymap.set('i', 'jk', '<Esc>', { silent = true })
-vim.keymap.set('c', 'jj', '<C-c>', { silent = true })
-vim.keymap.set('c', 'jk', '<C-c>', { silent = true })
 
 -- save file
 vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
