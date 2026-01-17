@@ -19,6 +19,7 @@ return {
         mappings = {
           ['\\'] = 'close_window',
           ['Z'] = 'expand_all_subnodes',
+          ['/'] = 'none',
         },
       },
     },
