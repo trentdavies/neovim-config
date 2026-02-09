@@ -265,7 +265,7 @@ return {
         jsonls = {},
         sqlls = {},
         terraformls = {},
-        yamlls = {},
+        -- yamlls = {},
         bashls = {},
         dockerls = {},
         docker_compose_language_service = {},

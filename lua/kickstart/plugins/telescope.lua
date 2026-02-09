@@ -63,6 +63,20 @@ return {
         pickers = {
           find_files = {
             hidden = true,
+            -- Use fd with explicit excludes so hidden files are included but `.git/` is not
+            find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git' },
+          },
+          -- Optional: also keep `live_grep` (your <leader>sg) from searching .git while still searching hidden files
+          live_grep = {
+            additional_args = function(_)
+              return {
+                '--hidden',
+                '--glob',
+                '!.git/*',
+                '--glob',
+                '!.git/**',
+              }
+            end,
           },
         },
         extensions = {
