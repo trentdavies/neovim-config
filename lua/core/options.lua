@@ -2,9 +2,6 @@ vim.o.number = true -- Make line numbers default
 vim.o.relativenumber = true -- relative line numbers, to help with jumping.
 vim.o.mouse = 'a' -- mouse mode
 vim.o.showmode = false
-vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus' -- sync to mac
-end)
 
 vim.o.breakindent = true
 vim.o.undofile = true
