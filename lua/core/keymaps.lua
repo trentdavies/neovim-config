@@ -19,7 +19,7 @@ vim.keymap.set('c', 'jj', '<C-c>', { silent = true })
 vim.keymap.set('c', 'jk', '<C-c>', { silent = true })
 
 -- windows
-vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = 'Quit window' })
+vim.keymap.set('n', '<leader>q', ':confirm quit<CR>', { desc = 'Quit window' })
 vim.keymap.set('n', '<leader>t', ':tabnew<CR>', { desc = 'New [T]ab' })
 vim.keymap.set('n', '<leader>v', ':vsplit<CR>', { desc = 'New [V]ertical Window' })
 vim.keymap.set('n', '<leader>h', ':split<CR>', { desc = 'New [H]oriz Window' })
