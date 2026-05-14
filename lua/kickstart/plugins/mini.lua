@@ -17,6 +17,19 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      -- Align text into columns by a delimiter.
+      --
+      -- Workflow:
+      --  - Visually select the lines (V then j/k)
+      --  - ga    - [A]lign — then type the split character (e.g. , or =)
+      --  - gA    - same, but with a live preview before committing
+      -- Inside the prompt you can stack modifiers; the useful ones:
+      --  - s   - set the separator (e.g. `s,` to split on every comma)
+      --  - j   - cycle justify: left / center / right
+      --  - f   - filter rows by a Lua expression
+      --  - <CR>- finish
+      require('mini.align').setup()
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
